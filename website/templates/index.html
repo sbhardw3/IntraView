@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>IntraView</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    </head>
+    <body>
+        <header>
+            <div class="header-content">
+                <h1><a href="/" class="header-link">IntraView</a></h1>
+                {% if user %}
+                <nav>
+                    <ul>
+                        <li><a href="{{ url_for('profile') }}">Profile</a></li>
+                        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    </ul>
+                </nav>
+                {% endif %}
+
+            </div>
+        </header>
+        <main>
+            {% if user %}
+            <h2>Welcome, {{ user.first_name }} {{ user.last_name }}!</h2>
+            {% endif %}
+            <div class="image-row">
+                <img src="Target.jpg" alt="Target logo">
+                <img src="Netflix.jpg" alt="Netflix logo">
+                <img src="NintendoSquare.png" alt="Nintendo logo">
+            </div>
+        </main>
+    </body>
+</html>

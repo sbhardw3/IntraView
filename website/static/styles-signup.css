@@ -1,0 +1,46 @@
+/* styles-signup.css */
+.card {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 45px; 
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card h1 {
+    text-align: center;
+}
+
+.card form {
+    margin-top: 20px;
+}
+
+.card label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.card input[type="text"],
+.card input[type="email"],
+.card input[type="password"],
+.card button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.card button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.card button:hover {
+    background-color: #218838;
+}

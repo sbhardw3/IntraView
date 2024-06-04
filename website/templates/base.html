@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h1>Register for Student Organizations</h1>
+    <form action="{{ url_for('register') }}" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="organization">Organization:</label>
+        <input type="text" id="organization" name="organization" required><br><br>
+        <button type="submit">Register</button>
+    </form>
+{% endblock %}

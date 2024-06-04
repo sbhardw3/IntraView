@@ -1,0 +1,35 @@
+﻿ITSC 3155
+Shiven Bhardwaj
+Marlon Mejias
+
+
+
+
+Scenarios:
+1. Shiven, a junior undergraduate student studying at UNC charlotte. He is a computer Science major looking for an internship this summer but doesn’t know where he can gather information regarding companies. He also wants to make connections through which he has more chances to interact with people. He logs into IntraView where he finds contact information regarding different companies offering internships. He saw videos and reviews regarding the role he was interested in and got an idea that what it would feel like to get an internship.
+
+
+2. Jacob recently completed an internship with a X company and wants to share his experience with the company. He uses the IntraView feature which allows interns to share their experiences with the company but leaving a review. Jacob rates the company on various factors like overall experience, his growth, environment, etc. and makes the reviews public so that everyone can see what he experienced. 
+
+
+3. Martin, a marketing intern with a recent startup, wanted to make connections in his industry. He joins IntraView discussion boards through which he gains some connection that can help me in his career ahead. He is now able to see the upcoming events and different gatherings that are held by the people in his field. 
+
+
+
+
+
+
+User Stories:
+* As an intern, I want to get notifications regarding new opportunities/internships through IntraView which match my preference.
+* As an employee, I can share my experience regarding the internship using a rating system.  
+* As a Job Company, we are able to respond to the reviews and give our social so, that we are able to hire more interns. 
+
+
+
+
+Features:
+* Rating System - where the intern which has worked can leave a review about the company
+* Social/Contact information board
+* Notifications regarding new internships 
+* Video Overview - user gets to see overview of the company, like what do they, what they offer and all
+* Networking - making connections with different people

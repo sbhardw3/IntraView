@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1><a href="/" class="header-link">IntraView</a></h1>
+            {% if user %}
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('profile') }}">Profile</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                </ul>
+            </nav>
+            {% endif %}
+        </div>
+    </header>
+    <main>
+        <h1>Profile</h1>
+        <h2>Welcome, {{ user.first_name }} {{ user.last_name }}!</h2> <!-- Display first and last name here -->
+
+        <div class="current-values">
+            <h2>Current Values:</h2>
+            <p><strong>Location:</strong> {{ user.details.location }}</p>
+            <p><strong>Degree Type:</strong> {{ user.details.degree_type }}</p>
+            <p><strong>School:</strong> {{ user.details.school }}</p>
+            <p><strong>Expected Graduation:</strong> {{ user.details.expected_graduation }}</p>
+        </div>
+
+        <h2>Update Profile:</h2>
+        <p>Update your profile information below:</p>
+        <form action="/profile" method="POST" class="profile-form">
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" value="{{ user.details.location }}">
+            
+            <label for="degree_type">Degree Type:</label>
+            <select id="degree_type" name="degree_type">
+                <option value="Bachelor">Bachelor</option>
+                <option value="Master">Master</option>
+                <option value="PhD">PhD</option>
+            </select>
+            
+            <label for="school">School:</label>
+            <input type="text" id="school" name="school" value="{{ user.details.school }}">
+            
+            <label for="expected_graduation">Expected Graduation:</label>
+            <select id="expected_graduation" name="expected_graduation">
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+                <option value="2026">2026</option>
+                <option value="2027">2027</option>
+                <option value="2028">2028</option>
+                <option value="Alumni">Alumni</option>
+            </select>
+            
+            <button type="submit" class="button">Save Changes</button>
+        </form>
+    </main>
+</body>
+</html>

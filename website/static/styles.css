@@ -1,0 +1,58 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    display: flex; /* Use flexbox */
+    justify-content: space-between; /* Align items to the start and end of the header */
+    align-items: center; /* Center items vertically */
+    padding: 20px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.header-link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+}
+
+.header-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    display: inline;
+    margin-left: 10px; /* Adjust spacing between links */
+}
+
+.nav-links li:first-child {
+    margin-left: 0; /* Remove margin from the first link */
+}
+
+/* Ensure links remain white */
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Adjust hover color */
+.nav-links a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
