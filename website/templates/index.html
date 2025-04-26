@@ -1,35 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>IntraView</title>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
-    </head>
-    <body>
-        <header>
-            <div class="header-content">
-                <h1><a href="/" class="header-link">IntraView</a></h1>
-                {% if user %}
-                <nav>
-                    <ul>
-                        <li><a href="{{ url_for('profile') }}">Profile</a></li>
-                        <li><a href="{{ url_for('logout') }}">Logout</a></li>
-                    </ul>
-                </nav>
-                {% endif %}
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntraView</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <h1><a href="/" class="header-link">IntraView</a></h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="{{ url_for('profile') }}">Profile</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div>|
+            <div class="card">
+                {% if user %}
+                <h2>Welcome, {{ user.first_name }} {{ user.last_name }}!</h2>
+                {% endif %}
+                <div class="index-content">
+                    <p>We're IntraView, the internship rating platform! Take a look at the companies we track below, or
+                        visit the <a href="{{ url_for('create_listing') }}">company
+                            listing creation page</a> in order to review a company we don't have yet!</p>
+                </div>
             </div>
-        </header>
-        <main>
-            {% if user %}
-            <h2>Welcome, {{ user.first_name }} {{ user.last_name }}!</h2>
-            {% endif %}
-            <div class="image-row">
-                <img src="Target.jpg" alt="Target logo">
-                <img src="Netflix.jpg" alt="Netflix logo">
-                <img src="NintendoSquare.png" alt="Nintendo logo">
+            <div class="company_list_container">
+                {% for company in companies %}
+                <div class="company_listing card">
+                    <p><a href="{{ url_for('company_page', company_id=company.id) }}">{{ company.name }}</a></p>
+                    <p>{{company.review_count}}</p>
+                    <p>{{ "{:.2f}".format(company.average_rating) }}</p>
+                </div>
+                {% endfor %}
             </div>
-        </main>
-    </body>
+        </div>
+    </main>
+</body>
+
 </html>

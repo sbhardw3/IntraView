@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ company.name }} - Company Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles-company-page.css') }}">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <h1><a href="/" class="header-link">IntraView</a></h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="{{ url_for('profile') }}">Profile</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="card">
+            <div class="flexed_main">
+                <div>
+                    <h1>{{ company.name }}</h1>
+                    <p><strong>Location:</strong> {{ company.location }}</p>
+                    <p><strong>Website:</strong> <a href="{{ company.website }}" target="_blank">{{ company.website
+                            }}</a>
+                    </p>
+                    <p><strong>Review Count:</strong> {{company.review_count }}</p>
+                    <p><strong>Average Rating:</strong> {{ "{:.2f}".format(company.average_rating) }}</p>
+
+                </div>
+            </div>
+            <div class="flexed_sub">
+                <div class="subcard_one">
+                    <h2>Submit a Review</h2>
+                    <form method="POST">
+                        <div class="subone_form">
+                            <label for="rating">Rating:</label><br>
+                            <input type="number" id="rating" name="rating" min="1" max="5"
+                                placeholder="Please enter a number from 1 to 5" required>
+                        </div>
+                        <div class="subone_form">
+                            <label for="review_text">Review:</label><br>
+                            <textarea id="review_text" name="review_text"
+                                placeholder="Tell us a bit about your experience!" required></textarea>
+                        </div>
+                        <div>
+                            <button type="submit">Submit Review</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="subcard_two">
+                    <h2>Reviews</h2>
+                    {% if reviews %}
+                    <ul>
+                        {% for review in reviews %}
+                        <li class="spread">
+                            <strong>User:</strong> {{ review.user.first_name }} {{ review.user.last_name }}<br>
+                            <strong>Rating:</strong> {{ review.rating }}<br>
+                            <strong>Review:</strong> {{ review.description }}<br>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% else %}
+                    <p>No reviews yet.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

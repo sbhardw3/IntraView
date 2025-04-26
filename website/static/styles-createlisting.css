@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    display: flex; /* Use flexbox */
+    justify-content: space-between; /* Align items to the start and end of the header */
+    align-items: center; /* Center items vertically */
+    padding: 20px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.header-link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+}
+
+.header-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+main {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 45px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+main h1 {
+    text-align: center;
+}
+
+main form {
+    margin-top: 20px;
+}
+
+main label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+main input[type="text"],
+main input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+main input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+main input[type="submit"]:hover {
+    background-color: #0056b3;
+}

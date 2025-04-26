@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles-createlisting.css') }}">
+    <title>Create Listing</title>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1><a href="/" class="header-link">IntraView</a></h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="{{ url_for('profile') }}">Profile</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <h1>Create Company Listing</h1>
+        <form method="POST" action="/create_listing" enctype="multipart/form-data">
+            <label for="company_name">Company Name:</label>
+            <input type="text" id="company_name" name="company_name" required><br><br>
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required><br><br>
+
+            <label for="website">Website:</label>
+            <input type="text" id="website" name="website" required><br><br>
+
+            <input type="submit" value="Create Listing">
+        </form>
+    </main>
+</body>
+</html>

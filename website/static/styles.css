@@ -8,9 +8,9 @@ body {
 header {
     background-color: #333;
     color: #fff;
-    display: flex; /* Use flexbox */
-    justify-content: space-between; /* Align items to the start and end of the header */
-    align-items: center; /* Center items vertically */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 20px;
 }
 
@@ -32,17 +32,14 @@ header {
 
 .nav-links {
     list-style-type: none;
-    margin: 0;
+    margin: 20px 0 0 20px;
     padding: 0;
 }
 
 .nav-links li {
     display: inline;
     margin-left: 10px; /* Adjust spacing between links */
-}
-
-.nav-links li:first-child {
-    margin-left: 0; /* Remove margin from the first link */
+    margin-right: 20px;
 }
 
 /* Ensure links remain white */
@@ -55,4 +52,56 @@ header {
 .nav-links a:hover {
     color: #0056b3;
     text-decoration: underline;
+}
+
+.card {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 45px; 
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card h1 {
+    text-align: center;
+}
+
+.card form {
+    margin-top: 20px;
+}
+
+.card label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.card button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+.card button:hover {
+    background-color: #0056b3;
+}
+
+.card a.button {
+    display: block;
+    text-align: center;
+    background-color: #28a745;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+.card a.button:hover {
+    background-color: #218838;
 }
